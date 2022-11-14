@@ -1,0 +1,33 @@
+{
+    "name": "sagarjariwala/woo-shipping-display-mode",
+    "description": "This for plugin automation",
+    "type": "project",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {},
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "phpcompatibility/phpcompatibility-wp": "^2",
+        "squizlabs/php_codesniffer" : "^3.4.0",
+        "wp-coding-standards/wpcs": "*",
+        "automattic/vipwpcs": "^2.3"
+    },
+    "authors": [
+        {
+            "name": "Sagar Jariwala",
+            "email": "sagar.jariwala@multidots.com"
+        }
+    ],
+    "scripts": {
+        "minify": "grunt uglify",
+        "lint-php": "./vendor/bin/phpcs -s",
+        "lint-php-fix": "./vendor/bin/phpcbf -s",
+        "lint": ["@minify", "@lint-php", "grunt compress"]
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
