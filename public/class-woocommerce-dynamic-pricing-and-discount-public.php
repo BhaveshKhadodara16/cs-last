@@ -156,8 +156,13 @@ class Woocommerce_Dynamic_Pricing_And_Discount_Pro_Public {
 		$get_all_dpad       = $get_all_dpad_query->get_posts();
 
 		$cart_array                = $woocommerce->cart->get_cart();
-		// $cart_sub_total            = $woocommerce->cart->subtotal;
-		$cart_sub_total              = $woocommerce->cart->cart_contents_total;
+		$cart_sub_total            = $woocommerce->cart->get_subtotal();
+		$subtax                    = $woocommerce->cart->get_subtotal_tax();
+		$wtdc                      = get_option( 'woocommerce_tax_display_cart' );
+		if( isset( $subtax ) && !empty( $subtax ) && 'incl' === $wtdc ) {
+			$cart_sub_total = $cart_sub_total + $subtax;	
+		}
+		//$cart_sub_total              = $woocommerce->cart->cart_contents_total; // cart total with incl tax.
 		$cart_final_products_array = array();
 		$cart_products_subtotal    = 0;
 
@@ -219,7 +224,7 @@ class Woocommerce_Dynamic_Pricing_And_Discount_Pro_Public {
 				} else {
 					$getFeesCost = $getFeesCostOriginal;
 				}
-
+				
 				$getFeesPerQtyFlag = '';
 				if ( wcdrfc_fs()->is__premium_only() ) {
 					if ( wcdrfc_fs()->can_use_premium_code() ) {
@@ -532,7 +537,7 @@ class Woocommerce_Dynamic_Pricing_And_Discount_Pro_Public {
 					}
 
 					if ( isset( $getFeeType ) && ! empty( $getFeeType ) && $getFeeType === 'percentage' ) {
-
+						
 						$percentage_fee = ( $percentage_subtotal * $getFeesCost ) / 100;
 
 						if ( $getFeesPerQtyFlag === 'on' ) {
@@ -2345,12 +2350,13 @@ class Woocommerce_Dynamic_Pricing_And_Discount_Pro_Public {
 				} else {
 					$final_passed['passed'] = 'yes';
 				}
+				
 				if ( isset( $final_passed ) && ! empty( $final_passed ) && is_array( $final_passed ) ) {
 					if ( ! in_array( 'no', $final_passed, true ) ) {
 
 						$local_nowtimestamp = current_time( 'timestamp' );
 						$texable      = ( isset( $getFeetaxable ) && ! empty( $getFeetaxable ) && $getFeetaxable === 'yes' ) ? true : false;
-
+						
 						$currentDate  = strtotime( gmdate( 'd-m-Y' ) );
 						$feeStartDate = isset( $getFeeStartDate ) && $getFeeStartDate !== '' ? strtotime( $getFeeStartDate ) : '';
 						$feeEndDate   = isset( $getFeeEndDate ) && $getFeeEndDate !== '' ? strtotime( $getFeeEndDate ) : '';

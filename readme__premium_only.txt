@@ -5,7 +5,7 @@ Tags: category discount, dynamic pricing, woocommerce discount, dynamic discount
 Requires at least: 5.0
 Tested up to: 6.0.2
 WC tested up to: 6.8.2
-Stable tag: 2.3.1
+Stable tag: 2.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -144,6 +144,11 @@ Ans: Yes, you have to set start date and end date of the discount rule while cre
 7.Offer promotion on all product details pages
 
 == Changelog ==
+= 2.3.2 =
+* Fixed - Minor bug fixed
+* Update – Compatible with WooCommerce 6.8.x
+* Update – Compatible with WordPress 6.0.x
+
 = 2.3.1 =
 * Fixed - Minor bug fixes related to the Currency format
 * Fixed - User role based rule not working

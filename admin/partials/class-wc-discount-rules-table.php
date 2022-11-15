@@ -238,9 +238,9 @@ if ( ! class_exists( 'WC_Discount_Rules_Table' ) ) {
             if( !is_null($amount) && $amount >= 0 ) {
 				$amount_type  = get_post_meta( $item->ID, 'dpad_settings_select_dpad_type', true );
 				if( 'fixed' === $amount_type ) {
-					return esc_html( get_woocommerce_currency_symbol() ) . ' ' . $amount;
+					return wc_price( $amount );
 				} else {
-					return $amount . ' %';
+					return $amount . '%';
 				}
 			} else {
 				return esc_html__( 'N/As', 'woo-conditional-discount-rules-for-checkout' );

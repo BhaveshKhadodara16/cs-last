@@ -3,9 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Conditional Discount Rules For WooCommerce Checkout "
-"Premium 2.3.1\n"
+"Premium 2.3.2\n"
 "Report-Msgid-Bugs-To: https://www.multidots.com/contact/\n"
-"POT-Creation-Date: 2022-09-06 06:21:46+00:00\n"
+"POT-Creation-Date: 2022-09-15 09:32:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1506,19 +1506,19 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: public/class-woocommerce-dynamic-pricing-and-discount-public.php:209
+#: public/class-woocommerce-dynamic-pricing-and-discount-public.php:214
 msgid "Fee"
 msgstr ""
 
-#: woo-conditional-discount-rules-for-checkout.php:286
+#: woo-conditional-discount-rules-for-checkout.php:287
 msgid "Conditional Discount Rules For WooCommerce Checkout "
 msgstr ""
 
-#: woo-conditional-discount-rules-for-checkout.php:287
+#: woo-conditional-discount-rules-for-checkout.php:288
 msgid "WooCommerce"
 msgstr ""
 
-#: woo-conditional-discount-rules-for-checkout.php:292
+#: woo-conditional-discount-rules-for-checkout.php:293
 msgid "%1$s requires %2$s to be installed & activated!"
 msgstr ""
 
