@@ -4,7 +4,7 @@
  * Plugin Name: Conditional Discount Rules For WooCommerce Checkout Premium
  * Plugin URI:        https://www.thedotstore.com/
  * Description:       With this plugin, you can create and manage complex fee rules in WooCommerce store without the help of a developer.
- * Version:           2.3.2
+ * Version:           2.3.1
  * Update URI: https://api.freemius.com
  * Author:            theDotstore
  * Author URI:        https://www.thedotstore.com/
@@ -147,7 +147,7 @@ if ( true === $wc_active ) {
 
 }
 if ( !defined( 'WDPAD_PRO_PLUGIN_VERSION' ) ) {
-    define( 'WDPAD_PRO_PLUGIN_VERSION', '2.3.2' );
+    define( 'WDPAD_PRO_PLUGIN_VERSION', '2.3.1' );
 }
 if ( !defined( 'WDPAD_PRO_PLUGIN_URL' ) ) {
     define( 'WDPAD_PRO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
